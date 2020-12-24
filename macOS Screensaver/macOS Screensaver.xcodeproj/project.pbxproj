@@ -172,6 +172,8 @@
 		CF318A1E2595146800424C12 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CF318A952595204C00424C12 /* thumbnail@2x.png */,
+				CF318A962595204C00424C12 /* thumbnail.png */,
 				CF318A1F2595147500424C12 /* Glyphs */,
 			);
 			path = Resources;
@@ -260,8 +262,6 @@
 		CFCD7280259143EA000FB873 /* macOS Screensaver */ = {
 			isa = PBXGroup;
 			children = (
-				CF318A952595204C00424C12 /* thumbnail@2x.png */,
-				CF318A962595204C00424C12 /* thumbnail.png */,
 				CF318A1E2595146800424C12 /* Resources */,
 				CFCD7285259143EA000FB873 /* Info.plist */,
 				CFCD728D2591441C000FB873 /* RainingCodeView.swift */,
