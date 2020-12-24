@@ -3,6 +3,7 @@ import SpriteKit
 
 public final class RainingCodeScene: SKScene, GlyphsController.Delegate {
     
+    private let themeProvider: ThemeProvider
     private let textureProvider: TextureProvider
     private let geometryController: GeometryController
     private let glyphsController: GlyphsController
@@ -15,13 +16,14 @@ public final class RainingCodeScene: SKScene, GlyphsController.Delegate {
     private var lastSpawnTime: TimeInterval = 0
     private var lastNextStepUpdateTime: TimeInterval = 0
     
-    public init(size: CGSize, backgroundColor: SKColor, textureProvider: TextureProvider) {
+    public init(size: CGSize, themeProvider: ThemeProvider, textureProvider: TextureProvider) {
+        self.themeProvider = themeProvider
         self.textureProvider = textureProvider
         self.geometryController = GeometryController(viewportSize: size, glyphsColumnsCount: 80)
-        self.glyphsController = GlyphsController(texturesProvider: textureProvider, geometryController: geometryController)
+        self.glyphsController = GlyphsController(themeProvider: themeProvider, texturesProvider: textureProvider, geometryController: geometryController)
         
         super.init(size: size)
-        self.backgroundColor = backgroundColor
+        self.backgroundColor = themeProvider.backgroundColor
         
         self.glyphsController.delegate = self
     }

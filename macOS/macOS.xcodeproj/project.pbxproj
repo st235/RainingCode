@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CF318A1D25950F1700424C12 /* AssetsTextureProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318A1C25950F1700424C12 /* AssetsTextureProviderFactory.swift */; };
+		CFA458FE2595537500DE4ADD /* DefaultThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA458FD2595537500DE4ADD /* DefaultThemeProvider.swift */; };
 		CFCD72A2259145E9000FB873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD72A1259145E9000FB873 /* AppDelegate.swift */; };
 		CFCD72BA25914640000FB873 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCD72B925914640000FB873 /* SpriteKit.framework */; };
 		CFCD72D32591466A000FB873 /* shared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCD72D22591466A000FB873 /* shared.framework */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		CF318A1C25950F1700424C12 /* AssetsTextureProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsTextureProviderFactory.swift; sourceTree = "<group>"; };
+		CFA458FD2595537500DE4ADD /* DefaultThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultThemeProvider.swift; sourceTree = "<group>"; };
 		CFCD729E259145E9000FB873 /* macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCD72A1259145E9000FB873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFCD72A3259145EA000FB873 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				CFCD72DA259146D7000FB873 /* MainStoryboard.storyboard */,
 				CFCD72DC2591471D000FB873 /* MainViewController.swift */,
 				CF318A1C25950F1700424C12 /* AssetsTextureProviderFactory.swift */,
+				CFA458FD2595537500DE4ADD /* DefaultThemeProvider.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA458FE2595537500DE4ADD /* DefaultThemeProvider.swift in Sources */,
 				CFCD72A2259145E9000FB873 /* AppDelegate.swift in Sources */,
 				CF318A1D25950F1700424C12 /* AssetsTextureProviderFactory.swift in Sources */,
 				CFCD72DD2591471D000FB873 /* MainViewController.swift in Sources */,

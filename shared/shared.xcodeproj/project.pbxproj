@@ -11,6 +11,7 @@
 		CF318A142594DE3A00424C12 /* GlyphsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318A132594DE3A00424C12 /* GlyphsController.swift */; };
 		CF318A172594F4A400424C12 /* TextureProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318A162594F4A400424C12 /* TextureProviderFactory.swift */; };
 		CF318A1A2594F73100424C12 /* GeometryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318A192594F73100424C12 /* GeometryController.swift */; };
+		CFA458FA2595529300DE4ADD /* ThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA458F92595529300DE4ADD /* ThemeProvider.swift */; };
 		CFCD72E0259147F7000FB873 /* RainingCodeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD72DF259147F7000FB873 /* RainingCodeScene.swift */; };
 		CFCD72E625914F64000FB873 /* TextureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD72E525914F64000FB873 /* TextureProvider.swift */; };
 /* End PBXBuildFile section */
@@ -20,6 +21,7 @@
 		CF318A132594DE3A00424C12 /* GlyphsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlyphsController.swift; sourceTree = "<group>"; };
 		CF318A162594F4A400424C12 /* TextureProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureProviderFactory.swift; sourceTree = "<group>"; };
 		CF318A192594F73100424C12 /* GeometryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryController.swift; sourceTree = "<group>"; };
+		CFA458F92595529300DE4ADD /* ThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProvider.swift; sourceTree = "<group>"; };
 		CFCD72C525914660000FB873 /* shared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = shared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCD72C925914660000FB873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFCD72DF259147F7000FB873 /* RainingCodeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainingCodeScene.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				CF318A132594DE3A00424C12 /* GlyphsController.swift */,
 				CF318A162594F4A400424C12 /* TextureProviderFactory.swift */,
 				CF318A192594F73100424C12 /* GeometryController.swift */,
+				CFA458F92595529300DE4ADD /* ThemeProvider.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				CF318A142594DE3A00424C12 /* GlyphsController.swift in Sources */,
 				CFCD72E625914F64000FB873 /* TextureProvider.swift in Sources */,
+				CFA458FA2595529300DE4ADD /* ThemeProvider.swift in Sources */,
 				CFCD72E0259147F7000FB873 /* RainingCodeScene.swift in Sources */,
 				CF318A172594F4A400424C12 /* TextureProviderFactory.swift in Sources */,
 				CF318A0D2594D9FD00424C12 /* CodeGlyph.swift in Sources */,

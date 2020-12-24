@@ -5,7 +5,10 @@ import shared
 
 class RainingCodeView: ScreenSaverView {
     
-    var spriteKitView: SKView?
+    private let settings = Settings()
+    
+    private var configurationView: ConfigurationView
+    private var spriteKitView: SKView?
     
     override var frame: NSRect {
         didSet {
@@ -13,13 +16,31 @@ class RainingCodeView: ScreenSaverView {
         }
     }
     
+    override var hasConfigureSheet: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override var configureSheet: NSWindow? {
+        get {
+            return configurationView.window
+        }
+    }
+    
     override init?(frame: NSRect, isPreview: Bool) {
+        self.configurationView = ConfigurationView(settings: self.settings)
+        
         super.init(frame: frame, isPreview: isPreview)
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("Screen Saver view does not support initializing with coder")
+    }
+    
+    override func viewDidMoveToWindow() {
+        settings.register()
     }
     
     override func startAnimation() {
@@ -35,7 +56,7 @@ class RainingCodeView: ScreenSaverView {
             textureFactory.load(callback: { [weak self] provider in
                 guard let self = self else { return }
                 
-                let scene = RainingCodeScene(size: self.bounds.size, backgroundColor: .black, textureProvider: provider)
+                let scene = RainingCodeScene(size: self.bounds.size, themeProvider: SettingsThemeProvider(settings: self.settings), textureProvider: provider)
                 scene.scaleMode = .resizeFill
                 scene.isUserInteractionEnabled = false
                 spriteKitView.presentScene(scene)

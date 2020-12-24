@@ -66,6 +66,10 @@
 		CF318A912595152800424C12 /* BundleTextureProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF318A902595152800424C12 /* BundleTextureProviderFactory.swift */; };
 		CF318A972595204C00424C12 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF318A952595204C00424C12 /* thumbnail@2x.png */; };
 		CF318A982595204C00424C12 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = CF318A962595204C00424C12 /* thumbnail.png */; };
+		CFA45900259553F300DE4ADD /* SettingsThemeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA458FF259553F300DE4ADD /* SettingsThemeProvider.swift */; };
+		CFC96072259542B800F3F3BA /* Configuration.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFC96071259542B800F3F3BA /* Configuration.xib */; };
+		CFC96074259542D000F3F3BA /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC96073259542D000F3F3BA /* ConfigurationView.swift */; };
+		CFC960782595472C00F3F3BA /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC960772595472C00F3F3BA /* Settings.swift */; };
 		CFCD728E2591441C000FB873 /* RainingCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCD728D2591441C000FB873 /* RainingCodeView.swift */; };
 		CFCD729225914534000FB873 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCD729125914534000FB873 /* ScreenSaver.framework */; };
 		CFCD72942591458C000FB873 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFCD72932591458C000FB873 /* SpriteKit.framework */; };
@@ -147,6 +151,10 @@
 		CF318A902595152800424C12 /* BundleTextureProviderFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleTextureProviderFactory.swift; sourceTree = "<group>"; };
 		CF318A952595204C00424C12 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 		CF318A962595204C00424C12 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
+		CFA458FF259553F300DE4ADD /* SettingsThemeProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsThemeProvider.swift; sourceTree = "<group>"; };
+		CFC96071259542B800F3F3BA /* Configuration.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Configuration.xib; sourceTree = "<group>"; };
+		CFC96073259542D000F3F3BA /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
+		CFC960772595472C00F3F3BA /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		CFCD727E259143EA000FB873 /* macOS Screensaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "macOS Screensaver.saver"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFCD7285259143EA000FB873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFCD728D2591441C000FB873 /* RainingCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainingCodeView.swift; sourceTree = "<group>"; };
@@ -266,6 +274,10 @@
 				CFCD7285259143EA000FB873 /* Info.plist */,
 				CFCD728D2591441C000FB873 /* RainingCodeView.swift */,
 				CF318A902595152800424C12 /* BundleTextureProviderFactory.swift */,
+				CFC96071259542B800F3F3BA /* Configuration.xib */,
+				CFC96073259542D000F3F3BA /* ConfigurationView.swift */,
+				CFC960772595472C00F3F3BA /* Settings.swift */,
+				CFA458FF259553F300DE4ADD /* SettingsThemeProvider.swift */,
 			);
 			path = "macOS Screensaver";
 			sourceTree = "<group>";
@@ -398,6 +410,7 @@
 				CF318A892595150D00424C12 /* 8.png in Resources */,
 				CF318A8D2595150D00424C12 /* 30.png in Resources */,
 				CF318A5F2595150D00424C12 /* 5.png in Resources */,
+				CFC96072259542B800F3F3BA /* Configuration.xib in Resources */,
 				CF318A6B2595150D00424C12 /* 43.png in Resources */,
 				CF318A802595150D00424C12 /* 29.png in Resources */,
 				CF318A582595150D00424C12 /* 17.png in Resources */,
@@ -418,6 +431,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFCD728E2591441C000FB873 /* RainingCodeView.swift in Sources */,
+				CFC96074259542D000F3F3BA /* ConfigurationView.swift in Sources */,
+				CFA45900259553F300DE4ADD /* SettingsThemeProvider.swift in Sources */,
+				CFC960782595472C00F3F3BA /* Settings.swift in Sources */,
 				CF318A912595152800424C12 /* BundleTextureProviderFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

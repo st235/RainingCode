@@ -19,7 +19,7 @@ class MainViewController: NSViewController {
         let textureProviderFactory = AssetsTextureProviderFactory()
         
         textureProviderFactory.load(callback: { provider in
-            let rainingCodeScene = RainingCodeScene(size: spriteKitView.bounds.size, backgroundColor: .black, textureProvider: provider)
+            let rainingCodeScene = RainingCodeScene(size: spriteKitView.bounds.size, themeProvider: DefaultThemeProvider(), textureProvider: provider)
             rainingCodeScene.scaleMode = .resizeFill
             spriteKitView.presentScene(rainingCodeScene)
         })

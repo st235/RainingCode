@@ -14,6 +14,7 @@ final class GlyphsController {
     
     private static let DYING_RANGE = 0.05...0.15
 
+    private let themeProvider: ThemeProvider
     private let texturesProvider: TextureProvider
     private let geometryController: GeometryController
     private var stridesDamage: [Double]
@@ -23,7 +24,8 @@ final class GlyphsController {
     
     weak var delegate: Delegate? = nil
     
-    init(texturesProvider: TextureProvider, geometryController: GeometryController) {
+    init(themeProvider: ThemeProvider, texturesProvider: TextureProvider, geometryController: GeometryController) {
+        self.themeProvider = themeProvider
         self.texturesProvider = texturesProvider
         self.geometryController = geometryController
         self.stridesDamage = Array(repeating: 0.0, count: Int(geometryController.getColumnsCount()))
@@ -72,7 +74,7 @@ final class GlyphsController {
         
         for activeNode in activeGeneration {
             newOldGeneration.append(activeNode)
-            activeNode.updateColor(color: .green)
+            activeNode.updateColor(color: themeProvider.inactiveColor)
             
             let shouldDrop = Double.random(in: 0...1)
             
@@ -107,7 +109,7 @@ final class GlyphsController {
     }
     
     private func createSkNode(position: CGPoint) -> SKSpriteNode {
-        let skSpriteNode = SKSpriteNode(texture: self.texturesProvider.peek(), color: .white, size: self.geometryController.getGlyphSize())
+        let skSpriteNode = SKSpriteNode(texture: self.texturesProvider.peek(), color: themeProvider.activeColor, size: self.geometryController.getGlyphSize())
         skSpriteNode.position = position
         skSpriteNode.colorBlendFactor = 1.0
         return skSpriteNode
