@@ -2,62 +2,61 @@ import ScreenSaver
 
 class Settings {
     
-    private static let KEY_BACKGROUND_COLOR = "keys.background"
-    private static let KEY_INACTIVE_COLOR = "keys.inactive"
-    private static let KEY_ACTIVE_COLOR = "keys.active"
+    private static let KEY_BACKGROUND_COLOR = "key.color.background"
+    private static let KEY_INACTIVE_COLOR = "key.color.inactive"
+    private static let KEY_ACTIVE_COLOR = "key.color.active"
 
     let screenSaverDefaults = createDefaults()
     
     var backgroundColor: NSColor {
         get {
-            return uintToColor(color: screenSaverDefaults.integer(forKey: Settings.KEY_BACKGROUND_COLOR))
+            return dataToColor(color: screenSaverDefaults.object(forKey: Settings.KEY_BACKGROUND_COLOR) as? Data, defaultColor: .black)
         }
         set(value) {
-            screenSaverDefaults.setValue(colorToInt(color: value), forKey: Settings.KEY_BACKGROUND_COLOR)
+            screenSaverDefaults.setValue(colorToNSData(color: value), forKey: Settings.KEY_BACKGROUND_COLOR)
             screenSaverDefaults.synchronize()
         }
     }
     
     var inactiveColor: NSColor {
         get {
-            return uintToColor(color: screenSaverDefaults.integer(forKey: Settings.KEY_INACTIVE_COLOR))
+            return dataToColor(color: screenSaverDefaults.object(forKey: Settings.KEY_INACTIVE_COLOR) as? Data, defaultColor: .green)
         }
         set(value) {
-            screenSaverDefaults.setValue(colorToInt(color: value), forKey: Settings.KEY_INACTIVE_COLOR)
+            screenSaverDefaults.setValue(colorToNSData(color: value), forKey: Settings.KEY_INACTIVE_COLOR)
             screenSaverDefaults.synchronize()
         }
     }
     
     var activeColor: NSColor {
         get {
-            return uintToColor(color: screenSaverDefaults.integer(forKey: Settings.KEY_ACTIVE_COLOR))
+            return dataToColor(color: screenSaverDefaults.object(forKey: Settings.KEY_ACTIVE_COLOR) as? Data, defaultColor: .white)
         }
         set(value) {
-            screenSaverDefaults.setValue(colorToInt(color: value), forKey: Settings.KEY_ACTIVE_COLOR)
+            screenSaverDefaults.setValue(colorToNSData(color: value), forKey: Settings.KEY_ACTIVE_COLOR)
             screenSaverDefaults.synchronize()
         }
     }
     
-    func register() {
+    init() {
         let defaultValues: [String:Any] = [
-            Settings.KEY_BACKGROUND_COLOR: colorToInt(color: .black),
-            Settings.KEY_INACTIVE_COLOR: colorToInt(color: .green),
-            Settings.KEY_ACTIVE_COLOR: colorToInt(color: .white)
+            Settings.KEY_BACKGROUND_COLOR: colorToNSData(color: .black),
+            Settings.KEY_INACTIVE_COLOR: colorToNSData(color: .green),
+            Settings.KEY_ACTIVE_COLOR: colorToNSData(color: .white)
         ]
         
         screenSaverDefaults.register(defaults: defaultValues)
     }
     
-    private func uintToColor(color: Int) -> NSColor {
-        let red = (color >> 16) & 0xFF
-        let green = (color >> 8) & 0xFF
-        let blue = (color >> 0) & 0xFF
-        
-        return NSColor(red: CGFloat(red) / 0xFF, green: CGFloat(green) / 0xFF, blue: CGFloat(blue) / 0xFF, alpha: 1.0)
+    private func dataToColor(color: Data?, defaultColor: NSColor) -> NSColor {
+        guard let color = color else {
+            return defaultColor
+        }
+        return try! NSKeyedUnarchiver.unarchivedObject(ofClass: NSColor.self, from: color) ?? defaultColor
     }
     
-    private func colorToInt(color: NSColor) -> Int {
-        return Int(color.redComponent * 0xFF) << 16 + Int(color.greenComponent * 0xFF) << 8 + Int(color.blueComponent)
+    private func colorToNSData(color: NSColor) -> Data {
+        return try! NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: false)
     }
     
     private static func createDefaults() -> ScreenSaverDefaults {

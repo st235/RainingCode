@@ -5,7 +5,7 @@ import shared
 
 class RainingCodeView: ScreenSaverView {
     
-    private let settings = Settings()
+    private let settings: Settings
     
     private var configurationView: ConfigurationView
     private var spriteKitView: SKView?
@@ -21,7 +21,7 @@ class RainingCodeView: ScreenSaverView {
             return true
         }
     }
-    
+
     override var configureSheet: NSWindow? {
         get {
             return configurationView.window
@@ -29,6 +29,7 @@ class RainingCodeView: ScreenSaverView {
     }
     
     override init?(frame: NSRect, isPreview: Bool) {
+        self.settings = Settings()
         self.configurationView = ConfigurationView(settings: self.settings)
         
         super.init(frame: frame, isPreview: isPreview)
@@ -37,10 +38,6 @@ class RainingCodeView: ScreenSaverView {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("Screen Saver view does not support initializing with coder")
-    }
-    
-    override func viewDidMoveToWindow() {
-        settings.register()
     }
     
     override func startAnimation() {
