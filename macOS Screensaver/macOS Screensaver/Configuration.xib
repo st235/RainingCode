@@ -18,14 +18,14 @@
         <window title="Matrix Rain Code Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="oBC-7m-4Vt">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="457" y="501" width="480" height="270"/>
+            <rect key="contentRect" x="457" y="501" width="300" height="200"/>
             <rect key="screenRect" x="0.0" y="0.0" width="3840" height="2135"/>
             <view key="contentView" id="AML-Hw-N8l">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <gridView fixedFrame="YES" xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZaG-35-491">
-                        <rect key="frame" x="130" y="135" width="221" height="102"/>
+                        <rect key="frame" x="40" y="78" width="221" height="102"/>
                         <rows>
                             <gridRow id="Mdb-Tf-WaM"/>
                             <gridRow id="a6x-rJ-qHp"/>
@@ -96,7 +96,7 @@
                         </gridCells>
                     </gridView>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2Z-Ae-LnT">
-                        <rect key="frame" x="208" y="51" width="66" height="32"/>
+                        <rect key="frame" x="117" y="7" width="66" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="SHW-0D-iIP">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
