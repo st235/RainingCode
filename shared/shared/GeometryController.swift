@@ -9,12 +9,12 @@ final class GeometryController {
     private let glyphSize: CGSize
     
     private let glyphsColumnsCount: CGFloat
-    private let columnsRange: Range<CGFloat>
+    private let columnsRange: Range<Int>
     
     init(viewportSize: CGSize, glyphsColumnsCount: CGFloat) {
         self.viewportSize = viewportSize
         self.glyphsColumnsCount = glyphsColumnsCount
-        self.columnsRange = 0..<glyphsColumnsCount
+        self.columnsRange = 0..<Int(glyphsColumnsCount)
         
         let glyphWidth = (viewportSize.width / glyphsColumnsCount).rounded(FloatingPointRoundingRule.up)
         
@@ -35,9 +35,9 @@ final class GeometryController {
     }
     
     func getRandomPosition() -> CGPoint {
-        let column = CGFloat.random(in: columnsRange)
+        let column = Int.random(in: columnsRange)
         let randomOffset: CGFloat = viewportSize.height * 0.25 * CGFloat(Double.random(in: 0...1))
-        return CGPoint(x: column * glyphSize.width, y: viewportSize.height - randomOffset)
+        return CGPoint(x: CGFloat(column) * glyphSize.width, y: viewportSize.height - randomOffset)
         
     }
     

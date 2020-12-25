@@ -47,6 +47,7 @@ class RainingCodeView: ScreenSaverView {
             spriteKitView.showsFPS = false
             spriteKitView.showsNodeCount = false
             spriteKitView.preferredFramesPerSecond = 60
+            spriteKitView.ignoresSiblingOrder = true
             
             let textureFactory = BundleTextureProviderFactory()
             

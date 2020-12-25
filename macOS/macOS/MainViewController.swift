@@ -15,6 +15,7 @@ class MainViewController: NSViewController {
         spriteKitView.showsFPS = true
         spriteKitView.showsDrawCount = true
         spriteKitView.showsNodeCount = true
+        spriteKitView.ignoresSiblingOrder = true
         
         let textureProviderFactory = AssetsTextureProviderFactory()
         
