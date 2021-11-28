@@ -1,6 +1,6 @@
 import SpriteKit
 
-protocol GlyphsControllerDelegate: class {
+protocol GlyphsControllerDelegate: AnyObject {
     
     func onAttach(node: SKNode)
     
